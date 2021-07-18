@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
 import { useFonts, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
-export default function HostARide({ navigation }) {
+export default function TripCalculator3({ navigation }) {
     let [fontsLoaded] = useFonts({
         Quicksand_700Bold,
     });
@@ -17,11 +17,11 @@ export default function HostARide({ navigation }) {
     } else {
         return (
             <View style={styles.container}>
-                <ImageBackground style={styles.backgroundImage} resizeMode="stretch" source={require('../assets/HostARide.png')}>
+                <ImageBackground style={styles.backgroundImage} resizeMode="stretch" source={require('../assets/TripCalculator3.png')}>
                     <View style={styles.imageContainer}>
 
-                        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('HostARide2')}>
-                            <Text style={styles.loginText}>Continue</Text>
+                        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('TripCalculator2')}>
+                            <Text style={styles.loginText}>Back</Text>
                         </TouchableOpacity>
 
                     </View>
