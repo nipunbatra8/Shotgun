@@ -1,21 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+import Home from './screens/Home';
+import Login from './screens/Login';
+import Signup from './screens/Signup';
+
+const Stack = createStackNavigator();
+
+function MyStack() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      <Stack.Screen name="Signup" component={Signup} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      {/* <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+      <Stack.Screen name="Connect" component={Connect} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      <Stack.Screen name="Experience" component={Experience} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      <Stack.Screen name="Interests" component={Interests} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      <Stack.Screen name="Groups" component={Groups} options={{ headerShown: true, headerTransparent: true, title: '' }} />
+      <Stack.Screen name="GroupChats" component={GroupChats} options={{ headerShown: true, headerTransparent: true, title: '' }} /> */}
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// export default class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       isAuthenticationReady: false,
+//       isAuthenticated: false,
+//     };
+
+//     // Initialize firebase...
+//     if (!firebase.apps.length) {
+//       firebase.initializeApp(ApiKeys.FirebaseConfig);
+//     }
+//   }
+
+//   render() {
+//     return (
+//       
+//     );
+//   }
+// }
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
